@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+class solution{
+vector<int>bfsofGraph(vector<vector<int>> &adj){
+bool vis[1001];
+vector<int>result;
+queue<int>q;
+q.push(0);
+vis[0] = true;
+while(!q.empty()){
+    int par = q.front();
+    q.pop();
+    result.push_back(par);
+    for(auto it :adj[par]){
+        if(!vis[it]){
+            vis[it] = true;
+            q.push(it);
+        }
+    }
+}
+return result;
+
+
+}
+};
